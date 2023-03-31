@@ -1,0 +1,11 @@
+.footer {
+  position: relative;
+  &__container {
+    display: flex;
+  }
+  &__copyright {
+    font-weight: 500;
+    color: #414B62;
+    margin: 0 auto;
+  }
+}

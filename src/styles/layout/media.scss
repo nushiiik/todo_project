@@ -1,0 +1,10 @@
+@mixin desktop {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
+}

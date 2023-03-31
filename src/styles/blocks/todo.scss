@@ -1,0 +1,101 @@
+.todo {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 75px;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-55%);
+    background: linear-gradient(180deg, rgba(37, 46, 66, 0) 0%, #252E42 67.19%);
+    @include phone {
+      width: 80%;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 420px;
+    max-height: 540px;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: #252E42;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 0 40px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(342*100%/420);
+      height: 85px;
+      left: 2px;
+      top: -26px;
+      z-index: -2;
+      background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
+      border-radius: 20px;
+      transform: rotate(-4.48deg);
+      transition: all .3s;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(395*100%/420);
+      height: 68px;
+      left: 0;
+      top: -13px;
+      z-index: -1;
+      background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+      border-radius: 20px;
+      transform: rotate(-2.32deg);
+      transition: all .1s;
+    }
+    &:hover::before {
+      top: -40px;
+      box-shadow: 10px 14px 34px rgba(0, 0, 0, 0.25);
+    }
+    &:hover::after {
+      top: -22px;
+      box-shadow: 10px 14px 34px rgba(0, 0, 0, 0.25);
+    }
+    @include phone {
+      max-width: 397px;
+      margin: 0 15px;
+    }
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+  }
+  &__button {
+    background-color: $orange;
+    color: #fff;
+    border-radius: 7px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color .15s;
+    &:hover {
+      background-color: $orangeHover;
+    }
+  }
+  &__list {
+    max-height: 450px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    margin-bottom: 18px;
+  }
+}
+
